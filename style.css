@@ -1,0 +1,85 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f5f0e6;
+  color: #5a3e2b;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+.btn {
+  background-color: #d8c5a0;
+  border: none;
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 12px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #c9b18c;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.product {
+  background-color: #fff3e0;
+  border-radius: 12px;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.reserve-btn {
+  margin-top: 10px;
+  background-color: #f5d6a1;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.reserve-btn:hover {
+  background-color: #e0c38a;
+}
+
+#reservation-form {
+  margin-top: 20px;
+  display: none;
+}
+
+#reservation-form input, #reservation-form select, #reservation-form button {
+  padding: 8px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#reservation-form button {
+  background-color: #d8c5a0;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#reservation-form button:hover {
+  background-color: #c9b18c;
+}
