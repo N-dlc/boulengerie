@@ -5,81 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boulengerie</title>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-<style>
-  body {
-    font-family: 'Quicksand', sans-serif;
-    background-color: #f5f0e6;
-    color: #5a3e2b;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  h1 {
-    margin: 20px 0;
-  }
-  .btn {
-    background-color: #d8c5a0;
-    border: none;
-    padding: 15px 30px;
-    margin: 10px;
-    border-radius: 12px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  .btn:hover {
-    background-color: #c9b18c;
-  }
-  .products {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    gap: 20px;
-  }
-  .product {
-    background-color: #fff3e0;
-    border-radius: 12px;
-    padding: 10px;
-    width: 200px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-  .product img {
-    width: 100%;
-    border-radius: 12px;
-  }
-  .reserve-btn {
-    margin-top: 10px;
-    background-color: #f5d6a1;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  .reserve-btn:hover {
-    background-color: #e0c38a;
-  }
-  #reservation-form {
-    margin-top: 20px;
-    display: none;
-  }
-  #reservation-form input, #reservation-form select, #reservation-form button {
-    padding: 8px;
-    margin: 5px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-  }
-  #reservation-form button {
-    background-color: #d8c5a0;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  #reservation-form button:hover {
-    background-color: #c9b18c;
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -105,60 +31,7 @@
   <button onclick="submitReservation()">Envoyer</button>
 </div>
 
-<script>
-const products = {
-  boulangerie: [
-    {name: "Baguette", img: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Baguette_de_Paris.jpg"},
-    {name: "Pain complet", img: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Pain_complet.jpg"},
-    {name: "Pain aux raisins", img: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Pain_aux_raisins.jpg"}
-  ],
-  patisserie: [
-    {name: "Éclair au chocolat", img: "https://upload.wikimedia.org/wikipedia/commons/f/f3/%C3%89clair_au_chocolat.jpg"},
-    {name: "Tarte aux fraises", img: "https://upload.wikimedia.org/wikipedia/commons/5/51/Tarte_aux_fraises.jpg"},
-    {name: "Millefeuille", img: "https://upload.wikimedia.org/wikipedia/commons/8/88/Millefeuille.jpg"}
-  ],
-  boisson: [
-    {name: "Café", img: "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"},
-    {name: "Soda", img: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Coca-Cola_glass.jpg"},
-    {name: "Sirop", img: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Sirop_de_fraise.jpg"}
-  ]
-};
-
-function showCategory(category) {
-  const container = document.getElementById('products-container');
-  container.innerHTML = '';
-  document.getElementById('reservation-form').style.display = 'none';
-  
-  products[category].forEach(product => {
-    const div = document.createElement('div');
-    div.classList.add('product');
-    div.innerHTML = `
-      <img src="${product.img}" alt="${product.name}">
-      <h4>${product.name}</h4>
-      <button class="reserve-btn" onclick="showReservationForm('${product.name}')">Réserver</button>
-    `;
-    container.appendChild(div);
-  });
-}
-
-function showReservationForm(productName) {
-  const form = document.getElementById('reservation-form');
-  form.style.display = 'block';
-}
-
-function submitReservation() {
-  const date = document.getElementById('reservation-date').value;
-  const time = document.getElementById('reservation-time').value;
-  if(date && time) {
-    alert(`Réservation envoyée pour le ${date} (${time}) !`);
-    document.getElementById('reservation-form').style.display = 'none';
-    document.getElementById('reservation-date').value = '';
-    document.getElementById('reservation-time').value = '';
-  } else {
-    alert('Veuillez remplir la date et la tranche horaire.');
-  }
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
